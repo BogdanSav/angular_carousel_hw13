@@ -1,0 +1,28 @@
+body{
+  margin: 0 auto;
+}
+.carousel-wrapper{
+  display: flex;
+  justify-content: space-between;
+  wrap: no-wrap;
+}
+.carousel{
+  width: 640px;
+  height: 480px;
+  display: flex;
+  wrap-option: no-wrap;
+  justify-content: space-around;
+}
+.img{
+padding: 10px;
+}
+.btn{
+  padding: 10px;
+  height: 480px;
+}
+.btn-prev{
+  height: inherit;
+}
+.btn-next{
+  height: inherit;
+}
