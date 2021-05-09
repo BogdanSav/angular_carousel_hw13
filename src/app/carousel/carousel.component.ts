@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ImageServiceService} from '../image-service.service';
 
 @Component({
@@ -8,6 +8,8 @@ import {ImageServiceService} from '../image-service.service';
   providers: [ImageServiceService]
 })
 export class CarouselComponent implements OnInit {
+
+  @Input() id: string;
   getImages: string[];
   carouselWrapper: any;
   setMargin = 0;
@@ -15,24 +17,25 @@ export class CarouselComponent implements OnInit {
     this.getImages = imgService.getImages();
   }
   onPrev(): void{
-    this.carouselWrapper = document.querySelector('.carousel-wrapper');
+    this.carouselWrapper = document.getElementById(this.id);
     if ( this.setMargin >= 0){
       this.setMargin = 0;
     }
-    else{
+    else {
       this.setMargin += 25;
       this.carouselWrapper.style.marginLeft = this.setMargin.toString() + '%';
     }
   }
 
   onNext(): void {
-    this.carouselWrapper = document.querySelector('.carousel-wrapper');
-    if ( Math.abs(this.setMargin) > 100){
-      this.setMargin = -1 * 100;
+    this.carouselWrapper = document.getElementById(this.id);
+    if ( Math.abs(this.setMargin) > 355){
+      this.setMargin = -1 * 355;
     }
-    this.setMargin -= 25;
-    this.carouselWrapper.style.marginLeft = this.setMargin.toString() + '%';
-
+    else {
+      this.setMargin -= 25;
+      this.carouselWrapper.style.marginLeft = this.setMargin.toString() + '%';
+    }
   }
 
   ngOnInit(): void {

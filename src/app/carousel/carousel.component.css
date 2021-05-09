@@ -5,8 +5,7 @@ body{
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-
-
+  transition: 1s;
 }
 .wrapper{
   display: flex;

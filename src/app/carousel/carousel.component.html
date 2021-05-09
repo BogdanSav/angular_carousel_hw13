@@ -2,7 +2,7 @@
   <span class="btn">
     <button class="btn-prev" (click)="onPrev()"><</button>
   </span>
-  <div class="carousel-wrapper">
+  <div class="carousel-wrapper" [id]="id">
     <app-carousel-item class="items" *ngFor="let img of getImages" [image]="img"></app-carousel-item>
   </div>
   <span class="btn">

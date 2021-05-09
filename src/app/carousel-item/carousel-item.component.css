@@ -1,5 +1,5 @@
 .carousel{
-  overflow: hidden;
+  /*overflow: hidden;*/
   display: flex;
   justify-content: space-around;
   margin-left: 70px;
